@@ -5,15 +5,34 @@ services:
     build: .
     environment:
       - DJANGO_SETTINGS_MODULE=settings.dev
+      - DATABASE_URL=${DATABASE_URL}/api
       - SECRET_KEY=${SECRET_KEY}
       - ALLOWED_HOSTS='*'
     ports:
       - "8000:8000"
     volumes:
       - ./api:/api
+    depends_on:
+      - db
     networks:
       - public
       - private
+
+  db:
+    image: postgres:11.4
+    networks:
+      - private
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=api
+      - POSTGRES_PASSWORD=api
+      - POSTGRES_DB=api
+    ports:
+      - "54321:54321"
+
+volumes:
+  pgdata:
 
 networks:
   public:
