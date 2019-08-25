@@ -1,0 +1,16 @@
+aspy.yaml==1.3.0
+cfgv==2.0.1
+Django==2.2.4
+djangorestframework==3.10.2
+identify==1.4.6
+importlib-metadata==0.19
+more-itertools==7.2.0
+nodeenv==1.3.3
+pre-commit==1.18.2
+pytz==2019.2
+PyYAML==5.1.2
+six==1.12.0
+sqlparse==0.3.0
+toml==0.10.0
+virtualenv==16.7.4
+zipp==0.6.0
