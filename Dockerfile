@@ -10,5 +10,5 @@ WORKDIR ./api
 RUN pip install --upgrade pip && pip install -r ${REQUIREMENTS:-requirements/requirements-dev.txt}
 
 COPY ./utils/entrypoint.sh /entrypoint.sh
-COPY ./utils/wait-for-mysql.py /wait-for-mysql.py
+COPY ./utils/wait-for-db.py /wait-for-db.py
 ENTRYPOINT ["/entrypoint.sh"]
