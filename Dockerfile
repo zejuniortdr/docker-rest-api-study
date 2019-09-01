@@ -4,8 +4,8 @@ MAINTAINER José Luis da Cruz Junior
 ENV PYTHONUNBUFFERED 1
 ENV TZ 'America/Sao_Paulo'
 
-COPY ./api /api
-WORKDIR ./api
+COPY ./src /src
+WORKDIR ./src
 
 RUN pip install --upgrade pip && pip install -r ${REQUIREMENTS:-requirements/requirements-dev.txt}
 
