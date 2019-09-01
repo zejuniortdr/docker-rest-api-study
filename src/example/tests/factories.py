@@ -1,4 +1,4 @@
-from django.utils.timezone import date
+from django.utils.timezone import datetime
 from factory.django import DjangoModelFactory
 
 from example.models import Example
@@ -11,5 +11,5 @@ class ExampleFactory(DjangoModelFactory):
     number = 1
     short_text = "some text"
     long_text = "long test"
-    some_date = date.today()
+    some_date = datetime.now().date()
     boolean = False

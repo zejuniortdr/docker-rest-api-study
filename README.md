@@ -1,4 +1,6 @@
 # docker-rest-api-study
+![coverage](./src/coverage.svg)
+<img src="./src/coverage.svg">
 
 Project template for new micro services based on:
 - docker
