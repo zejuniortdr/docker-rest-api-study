@@ -17,10 +17,10 @@ Project template for new micro services based on:
 - MySQL
 - black
 - pip-tools
+- coverage
 
 ## TODO:
 - PostgreSQL
-- coverage
 - swagger
 - sentry
 - CI (travis, circleci, or some other)
