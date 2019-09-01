@@ -4,15 +4,18 @@ Project template for new micro services based on:
 - docker
 - python3
 - DRF
-- mysql / postgres
-
+- MySQL / PostgreSQL
 
 ## Already configured:
+- docker
+- python3
+- DRF
+- MySQL
 - black
 - pip-tools
 
-
 ## TODO:
+- PostgreSQL
 - coverage
 - swagger
 - sentry
