@@ -62,7 +62,7 @@ WSGI_APPLICATION = 'api.wsgi.application'
 DATABASES = {
     'default': config('DATABASE_URL', cast=db_url)
 }
-DATABASES['default']['ENGINE'] = 'django_postgrespool'
+# DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

@@ -5,7 +5,7 @@ services:
     build: .
     environment:
       - DJANGO_SETTINGS_MODULE=settings.dev
-      - DATABASE_URL=${DATABASE_URL}/api
+      - DATABASE_URL=${DATABASE_URL}
       - SECRET_KEY=${SECRET_KEY}
       - ALLOWED_HOSTS='*'
     ports:
@@ -14,25 +14,28 @@ services:
       - ./api:/api
     depends_on:
       - db
+    links:
+      - db
     networks:
       - public
       - private
 
   db:
-    image: postgres:11.4
+    image: mysql:5.7.27
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
+      - MYSQL_DATABASE=api
     networks:
+      - public
       - private
     volumes:
-      - pgdata:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_USER=api
-      - POSTGRES_PASSWORD=api
-      - POSTGRES_DB=api
+      - mysqldata:/var/lib/mysql
+      - ./dump:/docker-entrypoint-initdb.d
     ports:
-      - "54321:54321"
+      - 3307:3306
 
 volumes:
-  pgdata:
+  mysqldata:
 
 networks:
   public:

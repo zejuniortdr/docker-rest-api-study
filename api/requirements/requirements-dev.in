@@ -1,5 +1,6 @@
 -r requirements.in
 
+black
 django-extensions
 factory-boy
 ipython
