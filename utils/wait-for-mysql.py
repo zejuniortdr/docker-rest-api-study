@@ -13,12 +13,11 @@ message = """
     database connect:
     host = {}
     user = {}
-    password = {}
     port = {}
     db = {}
     ################################
 """.format(
-    host, user, password, port, db
+    host, user, port, db
 )
 
 print(message)
@@ -40,7 +39,7 @@ while True:
         cursor.execute("show databases like '{}'".format(db))
         result = cursor.fetchone()
         if result and len(result) > 0:
-            print("Database '{}' is ready!").format(db)
+            print("Database '{}' is ready!".format(db))
             break
         else:
             print("Waiting for database creation to finish...")

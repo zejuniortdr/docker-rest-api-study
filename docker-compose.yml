@@ -1,20 +1,16 @@
-version: "3"
+version: "3.7"
 
 services:
   api:
     build: .
     environment:
-      - DJANGO_SETTINGS_MODULE=settings.dev
+      - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE}
       - DATABASE_URL=${DATABASE_URL}
       - SECRET_KEY=${SECRET_KEY}
-      - ALLOWED_HOSTS='*'
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
     ports:
       - "8000:8000"
-    volumes:
-      - ./api:/api
     depends_on:
-      - db
-    links:
       - db
     networks:
       - public
@@ -26,13 +22,10 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
       - MYSQL_DATABASE=api
     networks:
-      - public
       - private
     volumes:
       - mysqldata:/var/lib/mysql
       - ./dump:/docker-entrypoint-initdb.d
-    ports:
-      - 3307:3306
 
 volumes:
   mysqldata:
