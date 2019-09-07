@@ -2,9 +2,11 @@
 
 black
 django-extensions
+drf-yasg
 factory-boy
 ipython
 pip-tools
+pre-commit
 pytest
 pytest-cov
 pytest-django
