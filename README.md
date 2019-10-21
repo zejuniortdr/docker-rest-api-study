@@ -16,7 +16,7 @@ Project template for new micro services based on:
 - pip-tools
 - coverage
 - swagger
-- circle ci
+- circle ci (trigger not working)
 
 ## TODO:
 - PostgreSQL
